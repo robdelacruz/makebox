@@ -1,6 +1,6 @@
-setup-box: apt-install npm-install sqlite3 go home
+setup-box: dep sqlite3 go home
 
-apt-install:
+dep:
 	sudo apt update
 	sudo apt install build-essential
 	sudo apt install libreadline-dev libncurses-dev
@@ -8,12 +8,7 @@ apt-install:
 	sudo apt install curl software-properties-common
 	curl -sL https://deb.nodesource.com/setup_13.x | sudo bash -
 	sudo apt install nodejs
-
-npm-install:
-	sudo npm install -g tailwindcss
 	sudo npm install -g npx
-	sudo npm install -g cssnano --save-dev
-	sudo npm install -g postcss-cli
 
 sqlite3:
 	git clone git@github.com:robdelacruz/compile-sqlite3.git
