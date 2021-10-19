@@ -1,3 +1,6 @@
+NODE_VER = 14
+GO_VER = 1.17.2
+
 setup-box: dep sqlite3 go home
 
 dep:
@@ -6,7 +9,7 @@ dep:
 	sudo apt install libreadline-dev libncurses-dev
 	sudo apt install vim
 	sudo apt install curl software-properties-common
-	curl -sL https://deb.nodesource.com/setup_13.x | sudo bash -
+	curl -fsSL https://deb.nodesource.com/setup_$(NODE_VER).x | sudo bash -
 	sudo apt install nodejs
 	sudo npm install -g npx
 
@@ -18,8 +21,9 @@ sqlite3:
 	cd ..
 
 go:
-	wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
-	sudo tar -C /usr/local -xzf go1.14.2.linux-amd64.tar.gz
+	wget https://dl.google.com/go/go$(GO_VER).linux-amd64.tar.gz
+	sudo rm -rf /usr/local/go
+	sudo tar -C /usr/local -xzf go$(GO_VER).linux-amd64.tar.gz
 
 home:
 	git clone git@github.com:robdelacruz/home.git
