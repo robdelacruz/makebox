@@ -4,7 +4,7 @@ GO_VER = 1.17.2
 setup-box: dep sqlite3 go home
 
 dep:
-	sudo apt update
+	sudo apt update && apt upgrade
 	sudo apt install build-essential
 	sudo apt install libreadline-dev libncurses-dev
 	sudo apt install vim
