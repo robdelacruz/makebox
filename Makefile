@@ -1,7 +1,7 @@
 NODE_VER = 14
 GO_VER = 1.17.2
 
-setup-box: dep sqlite3 go home
+setup-box: dep nodejs sqlite3 go home
 
 dep:
 	sudo apt update && apt upgrade
@@ -9,6 +9,8 @@ dep:
 	sudo apt install libreadline-dev libncurses-dev
 	sudo apt install vim
 	sudo apt install curl software-properties-common
+
+nodejs:
 	curl -fsSL https://deb.nodesource.com/setup_$(NODE_VER).x | sudo bash -
 	sudo apt install nodejs
 	sudo npm install -g npx
