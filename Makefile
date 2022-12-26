@@ -1,5 +1,5 @@
-NODE_VER = 14
-GO_VER = 1.17.2
+NODE_VER = 19
+GO_VER = 1.19.4
 
 setup-box: dep nodejs sqlite3 go home
 
@@ -10,10 +10,14 @@ dep:
 	sudo apt install vim
 	sudo apt install curl software-properties-common
 
+# Note: Need workaround to install on Linux Mint 21.1 Vera.
+# See: https://unix.stackexchange.com/questions/729614/cannot-install-nodejs-on-linux-mint-vera
+# Manually download script and add "Vera" to check_alt() function
+
 nodejs:
 	curl -fsSL https://deb.nodesource.com/setup_$(NODE_VER).x | sudo bash -
 	sudo apt install nodejs
-	sudo npm install -g npx
+	#sudo npm install -g npx
 
 sqlite3:
 	git clone git@github.com:robdelacruz/compile-sqlite3.git
