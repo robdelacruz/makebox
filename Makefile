@@ -1,5 +1,5 @@
-NODE_VER = 19
-GO_VER = 1.19.4
+NODE_VER = 18
+GO_VER = 1.20.6
 
 setup-box: dep nodejs sqlite3 go home
 
@@ -15,7 +15,7 @@ dep:
 # Manually download script and add "Vera" to check_alt() function
 
 nodejs:
-	curl -fsSL https://deb.nodesource.com/setup_$(NODE_VER).x | sudo bash -
+	curl -fsSL https://deb.nodesource.com/setup_$(NODE_VER).x | sudo -E bash -
 	sudo apt install nodejs
 	#sudo npm install -g npx
 
@@ -27,7 +27,7 @@ sqlite3:
 	cd ..
 
 go:
-	wget https://dl.google.com/go/go$(GO_VER).linux-amd64.tar.gz
+	wget https://go.dev/dl/go$(GO_VER).linux-amd64.tar.gz
 	sudo rm -rf /usr/local/go
 	sudo tar -C /usr/local -xzf go$(GO_VER).linux-amd64.tar.gz
 
