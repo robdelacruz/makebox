@@ -1,5 +1,5 @@
 NODE_VER = 18
-GO_VER = 1.20.6
+GO_VER = 1.21.4
 
 setup-box: dep nodejs sqlite3 go home
 
