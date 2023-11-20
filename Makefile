@@ -4,7 +4,7 @@ GO_VER = 1.21.4
 setup-box: dep nodejs sqlite3 go home
 
 dep:
-	sudo apt update && apt upgrade
+	sudo apt update
 	sudo apt install build-essential
 	sudo apt install libreadline-dev libncurses-dev
 	sudo apt install vim
